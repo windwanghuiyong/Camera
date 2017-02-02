@@ -1,26 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-z4-tm9">
+                                <rect key="frame" x="0.0" y="629" width="137" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="New Photo or Video">
+                                    <color key="titleShadowColor" red="0.85713054820000001" green="0.96846601519999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shootPictureOrVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GaG-wk-zfg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OaN-1p-rcX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="601"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-Q9-ZBh">
+                                <rect key="frame" x="238" y="629" width="137" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Pick from Library">
+                                    <color key="titleShadowColor" red="0.85713054820000001" green="0.96846601519999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectExistingPictureOrVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R8P-1O-3qF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u4S-Q9-ZBh" secondAttribute="bottom" constant="8" id="2Lo-8p-oYW"/>
+                            <constraint firstItem="u4S-Q9-ZBh" firstAttribute="top" secondItem="OaN-1p-rcX" secondAttribute="bottom" constant="8" id="7wZ-PS-6tQ"/>
+                            <constraint firstItem="OaN-1p-rcX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MUJ-qF-nCg"/>
+                            <constraint firstItem="KYb-z4-tm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ogb-9f-1QN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KYb-z4-tm9" secondAttribute="bottom" constant="8" id="R6O-vE-bIC"/>
+                            <constraint firstItem="u4S-Q9-ZBh" firstAttribute="width" secondItem="KYb-z4-tm9" secondAttribute="width" id="ZO3-hy-8uJ"/>
+                            <constraint firstAttribute="trailing" secondItem="OaN-1p-rcX" secondAttribute="trailing" id="bpy-xl-5rc"/>
+                            <constraint firstAttribute="trailing" secondItem="u4S-Q9-ZBh" secondAttribute="trailing" id="l8p-4t-n43"/>
+                            <constraint firstItem="u4S-Q9-ZBh" firstAttribute="leading" secondItem="KYb-z4-tm9" secondAttribute="trailing" constant="101" id="xId-Fz-ZE0"/>
+                            <constraint firstItem="OaN-1p-rcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xSV-Rp-0mQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="OaN-1p-rcX" id="kTV-zt-L3b"/>
+                        <outlet property="takePictureButton" destination="KYb-z4-tm9" id="0Oy-e8-zgs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="102.99850074962519"/>
         </scene>
     </scenes>
 </document>
